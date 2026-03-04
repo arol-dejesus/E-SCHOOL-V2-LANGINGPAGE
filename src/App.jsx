@@ -211,6 +211,18 @@ const DownloadPopup = ({ isOpen, onClose }) => {
               <Countdown />
             </div>
 
+            <div className="w-full mb-6 p-3 rounded-xl bg-amber-tint border border-amber/20 flex flex-col gap-2">
+              <div className="flex items-center gap-2 justify-center text-[10px] font-bold text-amber-dark uppercase tracking-widest">
+                <Globe className="w-3 h-3" /> Version Web Disponible
+              </div>
+              <button 
+                onClick={onClose}
+                className="text-[11px] font-semibold text-onyx underline underline-offset-4 hover:text-amber-dark transition-colors"
+              >
+                Tester la version web dès maintenant
+              </button>
+            </div>
+
             <button 
               onClick={onClose} 
               className="w-full btn-primary py-2.5 rounded-lg text-[11px] font-bold tracking-widest mb-2"
