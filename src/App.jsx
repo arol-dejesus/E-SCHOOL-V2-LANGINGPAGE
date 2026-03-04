@@ -269,6 +269,7 @@ const Hero = ({ onDownload }) => (
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <button onClick={onDownload} className="btn-dark w-full sm:w-auto"><Apple className="w-5 h-5" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Télécharger sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight normal-case">App Store</div></div></button>
               <button onClick={onDownload} className="btn-outline w-full sm:w-auto"><Play className="w-5 h-5 fill-current" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Disponible sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight normal-case">Google Play</div></div></button>
+              <button onClick={onDownload} className="btn-outline w-full sm:w-auto border-gold/40 text-gold-dark hover:bg-gold-tint"><Globe className="w-5 h-5" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Accéder via la</div><div className="text-sm font-semibold -mt-0.5 tracking-tight normal-case">Version Web</div></div></button>
             </div>
           </Reveal>
           <Reveal delay={600}>
@@ -558,6 +559,9 @@ const CTASection = ({ onDownload }) => (
           </button>
           <button onClick={onDownload} className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full font-semibold text-sm bg-white/[0.08] text-white border border-white/[0.12] hover:bg-white/[0.14] transition-all duration-400 hover:-translate-y-1">
             <Play className="w-5 h-5 fill-current" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Disponible sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight">Google Play</div></div>
+          </button>
+          <button onClick={onDownload} className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full font-semibold text-sm bg-gold/10 text-white border border-gold/30 hover:bg-gold/20 transition-all duration-400 hover:-translate-y-1">
+            <Globe className="w-5 h-5" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Accéder via la</div><div className="text-sm font-semibold -mt-0.5 tracking-tight">Version Web</div></div>
           </button>
         </div>
       </Reveal>
