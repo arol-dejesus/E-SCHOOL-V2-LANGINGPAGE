@@ -151,8 +151,8 @@ const DownloadPopup = ({ isOpen, onClose }) => {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="w-12 h-12 bg-onyx rounded-xl flex items-center justify-center shadow-lg mb-4">
-              <Sparkles className="w-6 h-6 text-gold animate-pulse" />
+            <div className="w-16 h-16 mb-4">
+              <img src={LION_LOGO} alt="SAAH Logo" className="w-full h-full object-contain" />
             </div>
 
             <SectionLabel>Bientôt Disponible</SectionLabel>
