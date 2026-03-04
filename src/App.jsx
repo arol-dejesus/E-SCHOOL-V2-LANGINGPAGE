@@ -137,7 +137,7 @@ const PhoneMockup = ({ screenType = "home", className = "" }) => (
 
 // ── Countdown Component ──
 const Countdown = () => {
-  const targetDate = new Date('2026-04-10T00:00:00');
+  const targetDate = new Date('2026-03-20T00:00:00');
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
 
   useEffect(() => {
@@ -195,7 +195,7 @@ const DownloadPopup = ({ isOpen, onClose }) => {
               <img src={LION_LOGO} alt="SAAH Logo" className="w-full h-full object-contain" />
             </div>
 
-            <SectionLabel>Lancement Officiel</SectionLabel>
+            <SectionLabel>Lancement Apps Mobiles</SectionLabel>
             
             <h3 className="text-xl font-bold text-onyx mb-1 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
               L'excellence se <span className="italic text-gold">prépare.</span>
@@ -206,7 +206,7 @@ const DownloadPopup = ({ isOpen, onClose }) => {
             </p>
 
             <div className="w-full bg-pearl/50 rounded-2xl p-4 border border-border-light mt-0 mb-4">
-              <div className="text-lg font-black text-gold mb-3" style={{ fontFamily: 'var(--font-heading)' }}>10 AVRIL 2026</div>
+              <div className="text-lg font-black text-gold mb-3" style={{ fontFamily: 'var(--font-heading)' }}>20 MARS 2026</div>
               <div className="w-full h-px bg-border-light mb-3" />
               <Countdown />
             </div>
