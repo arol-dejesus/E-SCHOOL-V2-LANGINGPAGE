@@ -142,54 +142,49 @@ const DownloadPopup = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
       <div className="absolute inset-0 bg-onyx/40 backdrop-blur-xl animate-in fade-in duration-500" onClick={onClose} />
       
-      <Reveal direction="up" className="relative w-full max-w-md bg-white/90 backdrop-blur-3xl rounded-[2.5rem] p-1 shadow-[0_32px_120px_rgba(0,0,0,0.25)] border border-white overflow-hidden">
-        <div className="relative bg-white rounded-[2.3rem] p-6 md:p-8 border border-border-light overflow-hidden">
-          <div className="absolute top-0 right-0 p-4">
-            <button onClick={onClose} className="p-2 hover:bg-pearl rounded-full transition-all group">
-              <X className="w-5 h-5 text-text-muted" />
+      <Reveal direction="up" className="relative w-full max-w-sm bg-white/95 backdrop-blur-2xl rounded-[2rem] p-1 shadow-2xl border border-white overflow-hidden">
+        <div className="relative bg-white rounded-[1.8rem] p-5 md:p-6 border border-border-light overflow-hidden text-center">
+          <div className="absolute top-0 right-0 p-3">
+            <button onClick={onClose} className="p-1.5 hover:bg-pearl rounded-full transition-all group">
+              <X className="w-4 h-4 text-text-muted" />
             </button>
           </div>
 
-          <div className="flex flex-col items-center text-center">
-            <div className="relative mb-6 scale-90">
-              <div className="w-20 h-20 bg-onyx rounded-2xl flex items-center justify-center shadow-2xl rotate-3">
-                <Sparkles className="w-10 h-10 text-gold animate-pulse" />
-              </div>
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 bg-onyx rounded-xl flex items-center justify-center shadow-lg mb-4">
+              <Sparkles className="w-6 h-6 text-gold animate-pulse" />
             </div>
 
-            <SectionLabel>Lancement Exclusif</SectionLabel>
+            <SectionLabel>Bientôt Disponible</SectionLabel>
             
-            <h3 className="text-[2rem] font-bold text-onyx mb-3 tracking-tight leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+            <h3 className="text-2xl font-bold text-onyx mb-2 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
               L'excellence se <span className="italic text-gold">prépare.</span>
             </h3>
             
-            <p className="text-text-secondary text-[14px] font-light leading-relaxed mb-6 max-w-xs">
-              Nous peaufinons les détails pour le lancement officiel.
+            <p className="text-text-secondary text-[13px] font-light leading-snug mb-5 max-w-[240px]">
+              Lancement officiel à venir.
             </p>
 
-            <div className="flex gap-2 w-full justify-center mb-8">
-              <div className="bg-pearl/50 rounded-xl px-4 py-2 border border-border-light min-w-[70px]">
-                <div className="text-lg font-bold text-onyx leading-none">Avril</div>
-                <div className="text-[8px] uppercase tracking-widest text-text-muted mt-1">Mois</div>
-              </div>
-              <div className="bg-gold-tint rounded-xl px-5 py-2 border border-gold/15 shadow-gold min-w-[70px]">
-                <div className="text-xl font-black text-gold leading-none">10</div>
-                <div className="text-[8px] uppercase tracking-widest text-gold-dark mt-1">Jour</div>
-              </div>
-              <div className="bg-pearl/50 rounded-xl px-4 py-2 border border-border-light min-w-[70px]">
-                <div className="text-lg font-bold text-onyx leading-none">2026</div>
-                <div className="text-[8px] uppercase tracking-widest text-text-muted mt-1">Année</div>
-              </div>
+            <div className="flex gap-1.5 justify-center mb-6">
+              {[
+                { val: "10 Apr", label: "Date" },
+                { val: "2026", label: "Year" }
+              ].map((item, i) => (
+                <div key={i} className={`rounded-xl px-4 py-1.5 border ${i === 0 ? 'bg-gold-tint border-gold/20' : 'bg-pearl border-border-light'}`}>
+                  <div className={`text-sm font-bold ${i === 0 ? 'text-gold' : 'text-onyx'}`}>{item.val}</div>
+                  <div className="text-[7px] uppercase tracking-widest text-text-muted font-bold">{item.label}</div>
+                </div>
+              ))}
             </div>
 
             <button 
               onClick={onClose} 
-              className="w-full btn-dark py-3.5 rounded-xl text-[12px] font-bold tracking-widest mb-3"
+              className="w-full btn-dark py-2.5 rounded-lg text-[11px] font-bold tracking-widest mb-3"
             >
               C'est noté
             </button>
-            <p className="text-[9px] text-text-muted font-medium uppercase tracking-[0.1em]">
-              ◆ Accès privilégié bientôt disponible ◆
+            <p className="text-[8px] text-text-muted font-medium uppercase tracking-widest">
+              ◆ Accès privilégié ◆
             </p>
           </div>
         </div>
