@@ -5,13 +5,13 @@ import {
   Award, Eye, Phone, Diamond
 } from 'lucide-react';
 
-const LION_LOGO = "/logo.png"; // Assuming the user will provide/replace this
-const IMG_SHOWROOM = "https://images.unsplash.com/photo-1523050335392-9bef867a0578?q=80&w=2070&auto=format&fit=crop"; 
-const IMG_CAR_1 = "https://images.unsplash.com/photo-1577896851231-70ef14603e80?q=80&w=2070&auto=format&fit=crop";
-const IMG_CAR_2 = "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=2070&auto=format&fit=crop";
-const IMG_INTERIOR = "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2104&auto=format&fit=crop";
-const IMG_STATS_BG = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop";
-const IMG_HERO_BG = "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=2070&auto=format&fit=crop";
+const LION_LOGO = "/eschool_logo.png";
+const IMG_SHOWROOM = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"; 
+const IMG_CAR_1 = "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop";
+const IMG_CAR_2 = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop";
+const IMG_INTERIOR = "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop";
+const IMG_STATS_BG = "https://images.unsplash.com/photo-1454165833267-02300a726b12?q=80&w=2070&auto=format&fit=crop";
+const IMG_HERO_BG = "/hero_eschool.jpg";
 const IMG_HOWITWORKS_BG = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop";
 const IMG_PRO_BG = "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop";
 const IMG_CTA_BG = "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2074&auto=format&fit=crop";
@@ -74,16 +74,16 @@ const PhoneMockup = ({ screenType = "home", className = "" }) => (
         <div className="px-4 pb-3 bg-white/95 backdrop-blur-xl border-b border-border-light">
           <div className="flex justify-between items-center mb-3 mt-1">
             <div>
-              <p className="text-[8px] font-semibold text-text-muted uppercase tracking-[0.18em] mb-0.5">Établissement</p>
-              <div className="flex items-center gap-1 font-semibold text-gold-dark text-[10px] bg-gold-tint px-2 py-0.5 rounded-md w-max"><MapPin className="w-2.5 h-2.5" /> Lycée Classique</div>
+              <p className="text-[8px] font-semibold text-text-muted uppercase tracking-[0.18em] mb-0.5">Apprentissage</p>
+              <div className="flex items-center gap-1 font-semibold text-gold-dark text-[10px] bg-gold-tint px-2 py-0.5 rounded-md w-max"><Zap className="w-2.5 h-2.5" /> En direct</div>
             </div>
             <img src={LION_LOGO} alt="E-School" className="w-8 h-8 rounded-full bg-white p-0.5 border border-border shadow-xs" />
           </div>
-          <div className="bg-pearl rounded-xl p-2.5 flex items-center gap-2 border border-border-light"><Search className="w-3.5 h-3.5 text-text-muted" /><span className="text-[10px] font-medium text-text-muted">Élève, classe, cours...</span></div>
+          <div className="bg-pearl rounded-xl p-2.5 flex items-center gap-2 border border-border-light"><Search className="w-3.5 h-3.5 text-text-muted" /><span className="text-[10px] font-medium text-text-muted">Rechercher un cours...</span></div>
         </div>
         <div className="flex-1 overflow-y-auto px-4 pt-3 space-y-3 pb-20 no-scrollbar">
           <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
-            {['Dashboard', 'Cours', 'Notes', 'Planning'].map((cat, i) => (
+            {['Tout', 'Design', 'Développement', 'Business'].map((cat, i) => (
               <div key={i} className={`px-3 py-1 rounded-full text-[9px] font-semibold whitespace-nowrap ${i === 0 ? 'bg-gold text-white shadow-sm' : 'bg-white text-text-secondary border border-border-light'}`}>{cat}</div>
             ))}
           </div>
@@ -91,18 +91,18 @@ const PhoneMockup = ({ screenType = "home", className = "" }) => (
             <div key={i} className="bg-white rounded-2xl border border-border-light overflow-hidden group shadow-xs">
               <div className="relative h-32 overflow-hidden bg-pearl">
                 <img src={img} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="" />
-                <div className="absolute top-2 left-2 px-2 py-0.5 bg-white/90 backdrop-blur-lg rounded-md text-[7px] font-bold tracking-[0.15em] uppercase">{i === 0 ? 'MATHEMATIQUES' : 'PHYSIQUE'}</div>
-                <div className="absolute top-2 right-2 p-1.5 bg-white/90 backdrop-blur-lg rounded-full"><Star className="w-3 h-3 text-amber fill-amber" /></div>
+                <div className="absolute top-2 left-2 px-2 py-0.5 bg-white/90 backdrop-blur-lg rounded-md text-[7px] font-bold tracking-[0.15em] uppercase">{i === 0 ? 'DEVELOPPEMENT' : 'DESIGN UI/UX'}</div>
+                <div className="absolute top-2 right-2 p-1.5 bg-white/90 backdrop-blur-lg rounded-full"><Sparkles className="w-3 h-3 text-gold animate-pulse" /></div>
               </div>
               <div className="p-3">
-                <h4 className="font-bold text-text-primary text-[11px] mb-0.5">{i === 0 ? 'Algèbre Linéaire' : 'Mécanique Newtonienne'}</h4>
+                <h4 className="font-bold text-text-primary text-[11px] mb-0.5">{i === 0 ? 'Master React & Vite' : 'Figma Advanced'}</h4>
                 <p className="font-bold text-gold text-sm mb-2">{i === 0 ? '' : ''}</p>
                 <div className="flex items-center justify-between border-t border-border-light pt-2">
                   <div className="flex gap-1">
-                    <span className="bg-azure-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-azure border border-azure/10">Terminale C</span>
-                    <span className="bg-peach-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-peach border border-peach/10">2h / Semaine</span>
+                    <span className="bg-azure-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-azure border border-azure/10">Expert</span>
+                    <span className="bg-peach-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-peach border border-peach/10">12h Vidéo</span>
                   </div>
-                  <div className="flex items-center gap-0.5 text-[7px] font-bold text-emerald-dark bg-emerald-tint px-1.5 py-0.5 rounded"><ShieldCheck className="w-2.5 h-2.5" /> VALIDÉ</div>
+                  <div className="flex items-center gap-0.5 text-[7px] font-bold text-emerald-dark bg-emerald-tint px-1.5 py-0.5 rounded"><Award className="w-2.5 h-2.5" /> CERTIFIÉ</div>
                 </div>
               </div>
             </div>
@@ -257,14 +257,14 @@ const Hero = ({ onDownload }) => (
     <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10 w-full">
       <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
         <div className="flex-1 flex flex-col items-center text-center lg:items-start lg:text-left max-w-2xl">
-          <Reveal delay={100}><Badge color="gold" className="mb-8"><Award className="w-3 h-3" /> L'Éducation réinventée</Badge></Reveal>
+          <Reveal delay={100}><Badge color="gold" className="mb-8"><Zap className="w-3 h-3" /> L'Éducation de Demain</Badge></Reveal>
           <Reveal delay={200}>
             <h1 className="font-bold text-[3rem] sm:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.5rem] text-onyx tracking-[-0.03em] leading-[0.95] mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
-              L'excellence,{' '}<br className="hidden lg:block" />
-              <span className="italic text-gold">au cœur de<br className="hidden sm:block" /> l'école.</span>
+              Apprenez,<br className="hidden lg:block" />
+              <span className="italic text-gold">où que vous soyez.</span>
             </h1>
           </Reveal>
-          <Reveal delay={350}><p className="text-base lg:text-lg text-text-secondary leading-[1.8] mb-10 max-w-lg font-light">Gérez votre établissement avec une fluidité inégalée. La plateforme de gestion scolaire de référence en Afrique Centrale.</p></Reveal>
+          <Reveal delay={350}><p className="text-base lg:text-lg text-text-secondary leading-[1.8] mb-10 max-w-lg font-light">Maîtrisez de nouvelles compétences avec les meilleurs experts. La plateforme de cours en ligne leader en Afrique Centrale.</p></Reveal>
           <Reveal delay={450}>
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <button onClick={onDownload} className="btn-dark w-full sm:w-auto"><Apple className="w-5 h-5" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Télécharger sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight normal-case">App Store</div></div></button>
@@ -316,10 +316,10 @@ const AnimatedNumber = ({ target, suffix = "" }) => {
 
 const StatsSection = () => {
   const stats = [
-    { value: "50000", suffix: "+", label: "Élèves", icon: Users, color: "text-gold-glow", border: "border-gold/20" },
-    { value: "500", suffix: "+", label: "Établissements", icon: Award, color: "text-coral-light", border: "border-coral/20" },
-    { value: "2500", suffix: "+", label: "Enseignants", icon: ShieldCheck, color: "text-azure-light", border: "border-azure/20" },
-    { value: "10", suffix: "", label: "Régions", icon: MapPin, color: "text-emerald-light", border: "border-emerald/20" },
+    { value: "1000", suffix: "+", label: "Cours Vidéo", icon: Play, color: "text-gold-glow", border: "border-gold/20" },
+    { value: "250", suffix: "+", label: "Experts Formateurs", icon: Award, color: "text-coral-light", border: "border-coral/20" },
+    { value: "75000", suffix: "+", label: "Apprenants", icon: Users, color: "text-azure-light", border: "border-azure/20" },
+    { value: "15", suffix: "", label: "Partenaires", icon: Star, color: "text-emerald-light", border: "border-emerald/20" },
   ];
   return (
     <section className="relative py-20 overflow-hidden bg-onyx">
@@ -364,9 +364,9 @@ const InfiniteMarquee = () => {
 // ── Value Props ──
 const ValueProps = () => {
   const features = [
-    { icon: Users, title: "Gestion des Élèves", desc: "Suivi complet du cursus, de l'assiduité et du comportement en temps réel.", accent: "text-azure", iconBg: "bg-azure-tint", borderC: "border-azure/15" },
-    { icon: Award, title: "Suivi Académique", desc: "Saisie des notes simplifiée, calcul automatique des moyennes et génération des bulletins.", accent: "text-violet", iconBg: "bg-violet-tint", borderC: "border-violet/15" },
-    { icon: Zap, title: "Communication Directe", desc: "Lien instantané entre l'administration, les enseignants et les parents d'élèves.", accent: "text-emerald-dark", iconBg: "bg-emerald-tint", borderC: "border-emerald/15" },
+    { icon: Play, title: "Cours à la Demande", desc: "Accédez à vos leçons 24h/7j depuis n'importe quel appareil, même hors ligne.", accent: "text-azure", iconBg: "bg-azure-tint", borderC: "border-azure/15" },
+    { icon: Award, title: "Certifications Reconnues", desc: "Obtenez des certificats valorisables sur le marché de l'emploi après chaque formation.", accent: "text-violet", iconBg: "bg-violet-tint", borderC: "border-violet/15" },
+    { icon: Users, title: "Communauté de Mentorat", desc: "Échangez directement avec vos formateurs et une communauté d'apprenants passionnés.", accent: "text-emerald-dark", iconBg: "bg-emerald-tint", borderC: "border-emerald/15" },
   ];
   return (
     <section className="section-padding bg-white relative overflow-hidden" id="plateforme">
@@ -391,10 +391,10 @@ const ValueProps = () => {
             <Reveal delay={100}><SectionLabel>Notre Approche</SectionLabel></Reveal>
             <Reveal delay={200}>
               <h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-[1.12] mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
-                Pilotez votre établissement avec une <span className="italic text-coral">maîtrise totale</span>.
+                Propulsez votre <span className="italic text-coral">carrière professionnelle</span>.
               </h2>
             </Reveal>
-            <Reveal delay={250}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Nous avons digitalisé chaque processus administratif pour vous permettre de vous concentrer sur l'essentiel : la réussite de vos élèves.</p></Reveal>
+            <Reveal delay={250}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Nous avons sélectionné pour vous les meilleures formations pratiques pour vous accompagner dans votre réussite.</p></Reveal>
             <div className="space-y-5">
               {features.map((f, i) => (
                 <Reveal key={i} delay={300 + i * 120}>
@@ -432,7 +432,7 @@ const HowItWorks = () => {
           <Reveal><SectionLabel>Comment ça marche</SectionLabel></Reveal>
           <Reveal delay={100}>
             <h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-tight max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-heading)' }}>
-              Trois étapes vers votre <span className="italic text-violet">école digitale</span>
+              Votre parcours vers le <span className="italic text-violet">succès</span>
             </h2>
           </Reveal>
         </div>
@@ -459,9 +459,9 @@ const HowItWorks = () => {
 // ── Testimonials ──
 const TestimonialSection = () => {
   const testimonials = [
-    { text: "E-SCHOOL a radicalement changé notre gestion des bulletins. Un gain de temps incroyable pour nos équipes.", name: "Jean-Marc Essono", role: "Directeur d'École · Douala", avatar: "https://i.pravatar.cc/80?u=eschool-client-1", topColor: "bg-gold" },
-    { text: "En tant que parent, je peux enfin suivre les notes et les absences de mes enfants en temps réel depuis mon téléphone.", name: "Marie-Claire Ndam", role: "Parent d'Élève · Yaoundé", avatar: "https://i.pravatar.cc/80?u=eschool-client-2", topColor: "bg-coral" },
-    { text: "La plateforme est intuitive et les rapports statistiques nous aident à prendre les meilleures décisions pédagogiques.", name: "Patrick Mbida", role: "Préfet des Études · Douala", avatar: "https://i.pravatar.cc/80?u=eschool-client-3", topColor: "bg-azure" },
+    { text: "E-SCHOOL est la meilleure plateforme que j'ai utilisée. Les cours en ligne sont clairs, structurés et très pros.", name: "Jean-Marc Essono", role: "Étudiant en Tech · Douala", avatar: "https://i.pravatar.cc/80?u=eschool-client-1", topColor: "bg-gold" },
+    { text: "J'ai pu me former à mon rythme tout en travaillant. Les certificats m'ont vraiment aidé pour mon CV.", name: "Marie-Claire Ndam", role: "Développeuse Junior · Yaoundé", avatar: "https://i.pravatar.cc/80?u=eschool-client-2", topColor: "bg-coral" },
+    { text: "La qualité des vidéos et des supports de cours est exceptionnelle. Une vraie révolution pour nous au Cameroun.", name: "Patrick Mbida", role: "Entrepreneur · Douala", avatar: "https://i.pravatar.cc/80?u=eschool-client-3", topColor: "bg-azure" },
   ];
   return (
     <section className="section-padding bg-white relative overflow-hidden" id="securite">
@@ -508,10 +508,10 @@ const ProSection = ({ onDownload }) => {
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-center">
           <div className="flex-1">
-            <Reveal><SectionLabel>Pour les Établissements</SectionLabel></Reveal>
-            <Reveal delay={100}><h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-[1.12] mb-5" style={{ fontFamily: 'var(--font-heading)' }}>Le futur de l'école est <span className="italic text-azure">numérique.</span></h2></Reveal>
-            <Reveal delay={200}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Un tableau de bord complet pour les fondateurs et administrateurs afin de piloter la croissance de l'établissement.</p></Reveal>
-            <Reveal delay={300}><button onClick={onDownload} className="btn-primary">Démo Institutionnelle <ArrowRight className="w-4 h-4" /></button></Reveal>
+            <Reveal><SectionLabel>Pour les Entreprises</SectionLabel></Reveal>
+            <Reveal delay={100}><h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-[1.12] mb-5" style={{ fontFamily: 'var(--font-heading)' }}>Formez vos <span className="italic text-azure">équipes.</span></h2></Reveal>
+            <Reveal delay={200}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Des programmes sur mesure pour accompagner la transformation digitale de votre entreprise.</p></Reveal>
+            <Reveal delay={300}><button onClick={onDownload} className="btn-primary">E-School Business <ArrowRight className="w-4 h-4" /></button></Reveal>
           </div>
           <div className="flex-1 space-y-5 w-full">
             {cards.map((item, i) => (
@@ -572,8 +572,8 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
       <div className="flex flex-col lg:flex-row justify-between gap-14 mb-16">
         <div className="max-w-sm">
-          <div className="flex items-center gap-3 mb-5"><img src={LION_LOGO} alt="E-School" className="w-8 h-8 object-contain" /><span className="font-bold text-xl text-white tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>E-SCHOOL</span></div>
-          <p className="text-text-light/40 text-sm font-light leading-[1.8] mb-6">L'excellence technologique au service de l'éducation en Afrique Centrale.</p>
+          <div className="flex items-center gap-3 mb-5"><img src={LION_LOGO} alt="E-School" className="w-10 h-10 object-contain" /><span className="font-bold text-xl text-white tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>E-SCHOOL</span></div>
+          <p className="text-text-light/40 text-sm font-light leading-[1.8] mb-6">L'excellence de la formation en ligne pour l'Afrique de demain.</p>
           <div className="flex gap-3">
             {[{ l: 'Li', c: 'hover:text-azure' }, { l: 'Ig', c: 'hover:text-coral' }, { l: 'Fb', c: 'hover:text-azure' }].map(s => (
               <a key={s.l} href="#" className="w-9 h-9 rounded-xl bg-white/[0.05] border border-white/[0.08] flex items-center justify-center hover:border-gold/30 transition-all duration-300 group">
