@@ -255,7 +255,7 @@ const Navbar = ({ onDownload }) => {
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 flex justify-between items-center">
         <a href="#" className="flex items-center gap-3 group">
           <img src={LION_LOGO} alt="E-School" className="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-500" />
-          <span className="font-bold text-xl tracking-[0.02em] text-onyx" style={{ fontFamily: 'var(--font-heading)' }}>E-SCHOOL</span>
+          <span className="font-bold text-xl tracking-[0.02em] text-gold" style={{ fontFamily: 'var(--font-heading)' }}>E-SCHOOL</span>
         </a>
         <div className="flex items-center gap-5">
           <button onClick={onDownload} className="btn-primary text-[11px]">Télécharger</button>
