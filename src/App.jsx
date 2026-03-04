@@ -195,7 +195,7 @@ const DownloadPopup = ({ isOpen, onClose }) => {
               <img src={LION_LOGO} alt="SAAH Logo" className="w-full h-full object-contain" />
             </div>
 
-            <SectionLabel>Lancement Apps Mobiles</SectionLabel>
+            <SectionLabel>Lancement Officiel (Mobile Android & Apple)</SectionLabel>
             
             <h3 className="text-xl font-bold text-onyx mb-1 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
               L'excellence se <span className="italic text-gold">prépare.</span>
