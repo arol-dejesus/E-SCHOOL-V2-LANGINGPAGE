@@ -140,25 +140,67 @@ const DownloadPopup = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
-      <div className="absolute inset-0 bg-onyx/60 backdrop-blur-md" onClick={onClose} />
-      <Reveal direction="scale" className="relative w-full max-w-md bg-white rounded-[2.5rem] p-8 md:p-10 shadow-2xl border border-white/20 overflow-hidden">
-        <div className="absolute top-0 right-0 p-6">
-          <button onClick={onClose} className="p-2 hover:bg-pearl rounded-full transition-colors"><X className="w-5 h-5 text-text-muted" /></button>
-        </div>
-        <div className="flex flex-col items-center text-center">
-          <div className="w-20 h-20 bg-gold-tint rounded-[2rem] flex items-center justify-center mb-8 border border-gold/20 shadow-gold">
-            <Zap className="w-10 h-10 text-gold animate-pulse-soft" />
+      <div className="absolute inset-0 bg-onyx/40 backdrop-blur-xl animate-in fade-in duration-500" onClick={onClose} />
+      
+      <Reveal direction="up" className="relative w-full max-w-lg bg-white/90 backdrop-blur-3xl rounded-[3rem] p-1 md:p-1.5 shadow-[0_32px_120px_rgba(0,0,0,0.25)] border border-white overflow-hidden">
+        {/* Decorative Gradients */}
+        <div className="absolute -top-24 -right-24 w-64 h-64 bg-gold/10 rounded-full blur-[80px]" />
+        <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-azure/5 rounded-full blur-[80px]" />
+        
+        <div className="relative bg-white rounded-[2.8rem] p-8 md:p-12 border border-border-light overflow-hidden">
+          <div className="absolute top-0 right-0 p-8">
+            <button onClick={onClose} className="p-2.5 hover:bg-pearl rounded-full transition-all duration-300 group">
+              <X className="w-5 h-5 text-text-muted group-hover:rotate-90 transition-transform duration-500" />
+            </button>
           </div>
-          <Badge color="gold" className="mb-6">Bientôt Disponible</Badge>
-          <h3 className="text-3xl font-bold text-onyx mb-4 leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>Application en préparation</h3>
-          <p className="text-text-secondary text-base font-light leading-relaxed mb-8">
-            Nous finalisons les derniers détails pour vous offrir une expérience d'exception.
-          </p>
-          <div className="w-full bg-pearl rounded-2xl p-6 border border-border-light mb-8">
-            <p className="text-[11px] font-semibold text-text-muted uppercase tracking-[0.2em] mb-2">Lancement Officiel</p>
-            <div className="text-2xl font-bold text-gold" style={{ fontFamily: 'var(--font-heading)' }}>10 Avril 2026</div>
+
+          <div className="flex flex-col items-center text-center">
+            <div className="relative mb-10">
+              <div className="w-24 h-24 bg-onyx rounded-[2rem] flex items-center justify-center shadow-2xl rotate-3">
+                <Sparkles className="w-12 h-12 text-gold animate-pulse" />
+              </div>
+              <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gold rounded-full flex items-center justify-center border-4 border-white shadow-lg">
+                <Zap className="w-5 h-5 text-white" />
+              </div>
+            </div>
+
+            <SectionLabel>Lancement Exclusif</SectionLabel>
+            
+            <h3 className="text-[2.2rem] md:text-[2.8rem] font-bold text-onyx mb-5 tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-heading)' }}>
+              L'excellence se <br /> <span className="italic text-gold">prépare.</span>
+            </h3>
+            
+            <p className="text-text-secondary text-base font-light leading-relaxed mb-10 max-w-sm">
+              Nous peaufinons chaque détail pour que votre expérience SAAH soit à la hauteur de vos exigences les plus élevées.
+            </p>
+
+            <div className="grid grid-cols-3 gap-3 w-full mb-10">
+              <div className="bg-pearl/50 rounded-2xl p-4 border border-border-light">
+                <div className="text-xl font-bold text-onyx">Avril</div>
+                <div className="text-[9px] uppercase tracking-widest text-text-muted font-bold mt-1">Mois</div>
+              </div>
+              <div className="bg-gold-tint rounded-2xl p-4 border border-gold/15 scale-110 shadow-gold">
+                <div className="text-2xl font-black text-gold">10</div>
+                <div className="text-[9px] uppercase tracking-widest text-gold-dark font-black mt-1">Jour</div>
+              </div>
+              <div className="bg-pearl/50 rounded-2xl p-4 border border-border-light">
+                <div className="text-xl font-bold text-onyx">2026</div>
+                <div className="text-[9px] uppercase tracking-widest text-text-muted font-bold mt-1">Année</div>
+              </div>
+            </div>
+
+            <div className="w-full space-y-4">
+              <button 
+                onClick={onClose} 
+                className="w-full btn-dark py-4.5 rounded-2xl text-[13px] font-bold tracking-widest hover:shadow-gold-lg transition-all"
+              >
+                Être informé du lancement
+              </button>
+              <p className="text-[10px] text-text-muted font-medium uppercase tracking-[0.1em]">
+                ◆ Accès privilégié aux premières offres ◆
+              </p>
+            </div>
           </div>
-          <button onClick={onClose} className="btn-primary w-full py-4">C'est noté !</button>
         </div>
       </Reveal>
     </div>
