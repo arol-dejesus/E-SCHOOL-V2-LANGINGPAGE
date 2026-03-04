@@ -135,10 +135,39 @@ const PhoneMockup = ({ screenType = "home", className = "" }) => (
   </div>
 );
 
+// ── Popup ──
+const DownloadPopup = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
+      <div className="absolute inset-0 bg-onyx/60 backdrop-blur-md" onClick={onClose} />
+      <Reveal direction="scale" className="relative w-full max-w-md bg-white rounded-[2.5rem] p-8 md:p-10 shadow-2xl border border-white/20 overflow-hidden">
+        <div className="absolute top-0 right-0 p-6">
+          <button onClick={onClose} className="p-2 hover:bg-pearl rounded-full transition-colors"><X className="w-5 h-5 text-text-muted" /></button>
+        </div>
+        <div className="flex flex-col items-center text-center">
+          <div className="w-20 h-20 bg-gold-tint rounded-[2rem] flex items-center justify-center mb-8 border border-gold/20 shadow-gold">
+            <Zap className="w-10 h-10 text-gold animate-pulse-soft" />
+          </div>
+          <Badge color="gold" className="mb-6">Bientôt Disponible</Badge>
+          <h3 className="text-3xl font-bold text-onyx mb-4 leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>Application en préparation</h3>
+          <p className="text-text-secondary text-base font-light leading-relaxed mb-8">
+            Nous finalisons les derniers détails pour vous offrir une expérience d'exception.
+          </p>
+          <div className="w-full bg-pearl rounded-2xl p-6 border border-border-light mb-8">
+            <p className="text-[11px] font-semibold text-text-muted uppercase tracking-[0.2em] mb-2">Lancement Officiel</p>
+            <div className="text-2xl font-bold text-gold" style={{ fontFamily: 'var(--font-heading)' }}>10 Avril 2026</div>
+          </div>
+          <button onClick={onClose} className="btn-primary w-full py-4">C'est noté !</button>
+        </div>
+      </Reveal>
+    </div>
+  );
+};
+
 // ── Navbar ──
-const Navbar = () => {
+const Navbar = ({ onDownload }) => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
   useEffect(() => { const h = () => setScrolled(window.scrollY > 30); window.addEventListener('scroll', h, { passive: true }); return () => window.removeEventListener('scroll', h); }, []);
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-white/80 backdrop-blur-2xl border-b border-border-light py-3 shadow-xs' : 'bg-transparent py-5'}`}>
@@ -147,9 +176,8 @@ const Navbar = () => {
           <img src={LION_LOGO} alt="SAAH" className="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-500" />
           <span className="font-bold text-xl tracking-[0.02em] text-onyx" style={{ fontFamily: 'var(--font-heading)' }}>SAAH</span>
         </a>
-        
         <div className="flex items-center gap-5">
-          <button className="btn-primary text-[11px]">Télécharger</button>
+          <button onClick={onDownload} className="btn-primary text-[11px]">Télécharger</button>
         </div>
       </div>
     </nav>
@@ -157,7 +185,7 @@ const Navbar = () => {
 };
 
 // ── Hero ──
-const Hero = () => (
+const Hero = ({ onDownload }) => (
   <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden">
     {/* Background image */}
     <img src={IMG_HERO_BG} alt="" className="absolute inset-0 w-full h-full object-cover" />
@@ -177,8 +205,8 @@ const Hero = () => (
           <Reveal delay={350}><p className="text-base lg:text-lg text-text-secondary leading-[1.8] mb-10 max-w-lg font-light">Un accès privilégié à des véhicules premium et certifiés. La première plateforme de confiance en Afrique Centrale.</p></Reveal>
           <Reveal delay={450}>
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <button className="btn-dark w-full sm:w-auto"><Apple className="w-5 h-5" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Télécharger sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight normal-case">App Store</div></div></button>
-              <button className="btn-outline w-full sm:w-auto"><Play className="w-5 h-5 fill-current" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Disponible sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight normal-case">Google Play</div></div></button>
+              <button onClick={onDownload} className="btn-dark w-full sm:w-auto"><Apple className="w-5 h-5" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Télécharger sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight normal-case">App Store</div></div></button>
+              <button onClick={onDownload} className="btn-outline w-full sm:w-auto"><Play className="w-5 h-5 fill-current" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Disponible sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight normal-case">Google Play</div></div></button>
             </div>
           </Reveal>
           <Reveal delay={600}>
@@ -403,7 +431,7 @@ const TestimonialSection = () => {
 };
 
 // ── Pro Section ──
-const ProSection = () => {
+const ProSection = ({ onDownload }) => {
   const cards = [
     { icon: TrendingUp, title: "Visibilité Maximale", text: "Touchez un réseau d'acheteurs qualifiés.", stat: "5x", statLabel: "plus de visibilité", color: "text-coral", bg: "bg-coral-tint", hoverBg: "group-hover:bg-coral", borderC: "border-coral/15" },
     { icon: Users, title: "Leads Qualifiés", text: "Des acheteurs vérifiés et motivés.", stat: "92%", statLabel: "satisfaction", color: "text-azure", bg: "bg-azure-tint", hoverBg: "group-hover:bg-azure", borderC: "border-azure/15" },
@@ -421,7 +449,7 @@ const ProSection = () => {
             <Reveal><SectionLabel>Pour les Professionnels</SectionLabel></Reveal>
             <Reveal delay={100}><h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-[1.12] mb-5" style={{ fontFamily: 'var(--font-heading)' }}>Le showroom digital de <span className="italic text-azure">votre concession.</span></h2></Reveal>
             <Reveal delay={200}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Un tableau de bord intuitif pour publier vos véhicules, gérer vos leads et suivre vos performances.</p></Reveal>
-            <Reveal delay={300}><button className="btn-primary">Rejoindre SAAH Business <ArrowRight className="w-4 h-4" /></button></Reveal>
+            <Reveal delay={300}><button onClick={onDownload} className="btn-primary">Rejoindre SAAH Business <ArrowRight className="w-4 h-4" /></button></Reveal>
           </div>
           <div className="flex-1 space-y-5 w-full">
             {cards.map((item, i) => (
@@ -451,7 +479,7 @@ const ProSection = () => {
 };
 
 // ── CTA ──
-const CTASection = () => (
+const CTASection = ({ onDownload }) => (
   <section className="relative overflow-hidden py-24">
     {/* Background image */}
     <img src={IMG_CTA_BG} alt="" className="absolute inset-0 w-full h-full object-cover" />
@@ -463,10 +491,10 @@ const CTASection = () => (
       <Reveal delay={200}><p className="text-text-light/60 text-base md:text-lg font-light mb-10 max-w-2xl mx-auto leading-relaxed">L'application SAAH est gratuite. Téléchargez-la et découvrez la nouvelle référence automobile en Afrique Centrale.</p></Reveal>
       <Reveal delay={300}>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full font-semibold text-sm text-white bg-gold hover:bg-gold-dark hover:-translate-y-1 transition-all duration-400 shadow-gold-lg">
+          <button onClick={onDownload} className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full font-semibold text-sm text-white bg-gold hover:bg-gold-dark hover:-translate-y-1 transition-all duration-400 shadow-gold-lg">
             <Apple className="w-5 h-5" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-80">Télécharger sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight">App Store</div></div>
           </button>
-          <button className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full font-semibold text-sm bg-white/[0.08] text-white border border-white/[0.12] hover:bg-white/[0.14] transition-all duration-400 hover:-translate-y-1">
+          <button onClick={onDownload} className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full font-semibold text-sm bg-white/[0.08] text-white border border-white/[0.12] hover:bg-white/[0.14] transition-all duration-400 hover:-translate-y-1">
             <Play className="w-5 h-5 fill-current" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Disponible sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight">Google Play</div></div>
           </button>
         </div>
@@ -509,18 +537,23 @@ const Footer = () => (
 
 // ── APP ──
 export default function App() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const togglePopup = () => setIsPopupOpen(!isPopupOpen);
+
   return (
     <div className="min-h-screen bg-ivory text-text-primary overflow-x-hidden" style={{ fontFamily: 'var(--font-body)' }}>
-      <Navbar />
-      <Hero />
+      <Navbar onDownload={togglePopup} />
+      <Hero onDownload={togglePopup} />
       <StatsSection />
       <InfiniteMarquee />
       <ValueProps />
       <HowItWorks />
       <TestimonialSection />
-      <ProSection />
-      <CTASection />
+      <ProSection onDownload={togglePopup} />
+      <CTASection onDownload={togglePopup} />
       <Footer />
+      
+      <DownloadPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </div>
   );
 }
