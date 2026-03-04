@@ -211,17 +211,24 @@ const DownloadPopup = ({ isOpen, onClose }) => {
               <Countdown />
             </div>
 
-            <div className="w-full mb-6 p-3 rounded-xl bg-amber-tint border border-amber/20 flex flex-col gap-2">
-              <div className="flex items-center gap-2 justify-center text-[10px] font-bold text-amber-dark uppercase tracking-widest">
-                <Globe className="w-3 h-3" /> Version Web Disponible
+            <a 
+              href="#"
+              onClick={(e) => { e.preventDefault(); onClose(); }}
+              className="w-full mb-6 p-4 rounded-2xl bg-gold/5 border border-gold/20 flex items-center justify-between group hover:bg-gold/10 hover:border-gold/30 hover:-translate-y-0.5 transition-all duration-400"
+            >
+              <div className="flex items-center gap-3 text-left">
+                <div className="w-10 h-10 rounded-xl bg-amber-tint flex items-center justify-center text-amber-dark ring-4 ring-amber-light/5">
+                  <Globe className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-[9px] font-bold text-gold uppercase tracking-[0.12em] mb-0.5">Accès Immédiat</div>
+                  <div className="text-[13px] font-bold text-onyx tracking-tight">Tester la version Web</div>
+                </div>
               </div>
-              <button 
-                onClick={onClose}
-                className="text-[11px] font-semibold text-onyx underline underline-offset-4 hover:text-amber-dark transition-colors"
-              >
-                Tester la version web dès maintenant
-              </button>
-            </div>
+              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm border border-border-light group-hover:bg-gold group-hover:text-white transition-colors">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </a>
 
             <button 
               onClick={onClose} 
