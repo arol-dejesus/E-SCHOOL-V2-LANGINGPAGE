@@ -5,17 +5,17 @@ import {
   Award, Eye, Phone, Diamond
 } from 'lucide-react';
 
-const LION_LOGO = "/logo.png";
-const IMG_SHOWROOM = "/showroom_background.png";
-const IMG_CAR_1 = "/hero_car.png";
-const IMG_CAR_2 = "/porsche_911.png";
-const IMG_INTERIOR = "/interior_steering.png";
-const IMG_STATS_BG = "/stats_bg.png";
-const IMG_HERO_BG = "/hero_bg.png";
-const IMG_HOWITWORKS_BG = "/howitworks_bg.png";
-const IMG_PRO_BG = "/pro_bg.png";
-const IMG_CTA_BG = "/cta_bg.png";
-const IMG_TESTIMONIALS_BG = "/testimonials_bg.png";
+const LION_LOGO = "/logo.png"; // Assuming the user will provide/replace this
+const IMG_SHOWROOM = "https://images.unsplash.com/photo-1523050335392-9bef867a0578?q=80&w=2070&auto=format&fit=crop"; 
+const IMG_CAR_1 = "https://images.unsplash.com/photo-1577896851231-70ef14603e80?q=80&w=2070&auto=format&fit=crop";
+const IMG_CAR_2 = "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=2070&auto=format&fit=crop";
+const IMG_INTERIOR = "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2104&auto=format&fit=crop";
+const IMG_STATS_BG = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop";
+const IMG_HERO_BG = "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=2070&auto=format&fit=crop";
+const IMG_HOWITWORKS_BG = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop";
+const IMG_PRO_BG = "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop";
+const IMG_CTA_BG = "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2074&auto=format&fit=crop";
+const IMG_TESTIMONIALS_BG = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop";
 
 // ── Animations ──
 const useScrollReveal = (threshold = 0.12) => {
@@ -74,16 +74,16 @@ const PhoneMockup = ({ screenType = "home", className = "" }) => (
         <div className="px-4 pb-3 bg-white/95 backdrop-blur-xl border-b border-border-light">
           <div className="flex justify-between items-center mb-3 mt-1">
             <div>
-              <p className="text-[8px] font-semibold text-text-muted uppercase tracking-[0.18em] mb-0.5">Localisation</p>
-              <div className="flex items-center gap-1 font-semibold text-gold-dark text-[10px] bg-gold-tint px-2 py-0.5 rounded-md w-max"><MapPin className="w-2.5 h-2.5" /> Douala, CM</div>
+              <p className="text-[8px] font-semibold text-text-muted uppercase tracking-[0.18em] mb-0.5">Établissement</p>
+              <div className="flex items-center gap-1 font-semibold text-gold-dark text-[10px] bg-gold-tint px-2 py-0.5 rounded-md w-max"><MapPin className="w-2.5 h-2.5" /> Lycée Classique</div>
             </div>
-            <img src={LION_LOGO} alt="SAAH" className="w-8 h-8 rounded-full bg-white p-0.5 border border-border shadow-xs" />
+            <img src={LION_LOGO} alt="E-School" className="w-8 h-8 rounded-full bg-white p-0.5 border border-border shadow-xs" />
           </div>
-          <div className="bg-pearl rounded-xl p-2.5 flex items-center gap-2 border border-border-light"><Search className="w-3.5 h-3.5 text-text-muted" /><span className="text-[10px] font-medium text-text-muted">Marque, modèle...</span></div>
+          <div className="bg-pearl rounded-xl p-2.5 flex items-center gap-2 border border-border-light"><Search className="w-3.5 h-3.5 text-text-muted" /><span className="text-[10px] font-medium text-text-muted">Élève, classe, cours...</span></div>
         </div>
         <div className="flex-1 overflow-y-auto px-4 pt-3 space-y-3 pb-20 no-scrollbar">
           <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
-            {['Sport', 'SUV', 'Berline', 'Luxe'].map((cat, i) => (
+            {['Dashboard', 'Cours', 'Notes', 'Planning'].map((cat, i) => (
               <div key={i} className={`px-3 py-1 rounded-full text-[9px] font-semibold whitespace-nowrap ${i === 0 ? 'bg-gold text-white shadow-sm' : 'bg-white text-text-secondary border border-border-light'}`}>{cat}</div>
             ))}
           </div>
@@ -91,18 +91,18 @@ const PhoneMockup = ({ screenType = "home", className = "" }) => (
             <div key={i} className="bg-white rounded-2xl border border-border-light overflow-hidden group shadow-xs">
               <div className="relative h-32 overflow-hidden bg-pearl">
                 <img src={img} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="" />
-                <div className="absolute top-2 left-2 px-2 py-0.5 bg-white/90 backdrop-blur-lg rounded-md text-[7px] font-bold tracking-[0.15em] uppercase">{i === 0 ? 'LAMBORGHINI' : 'PORSCHE'}</div>
-                <div className="absolute top-2 right-2 p-1.5 bg-white/90 backdrop-blur-lg rounded-full"><Heart className="w-3 h-3 text-coral" /></div>
+                <div className="absolute top-2 left-2 px-2 py-0.5 bg-white/90 backdrop-blur-lg rounded-md text-[7px] font-bold tracking-[0.15em] uppercase">{i === 0 ? 'MATHEMATIQUES' : 'PHYSIQUE'}</div>
+                <div className="absolute top-2 right-2 p-1.5 bg-white/90 backdrop-blur-lg rounded-full"><Star className="w-3 h-3 text-amber fill-amber" /></div>
               </div>
               <div className="p-3">
-                <h4 className="font-bold text-text-primary text-[11px] mb-0.5">{i === 0 ? 'Aventador SVJ' : '911 GT3 RS'}</h4>
+                <h4 className="font-bold text-text-primary text-[11px] mb-0.5">{i === 0 ? 'Algèbre Linéaire' : 'Mécanique Newtonienne'}</h4>
                 <p className="font-bold text-gold text-sm mb-2">{i === 0 ? '' : ''}</p>
                 <div className="flex items-center justify-between border-t border-border-light pt-2">
                   <div className="flex gap-1">
-                    <span className="bg-azure-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-azure border border-azure/10">Auto</span>
-                    <span className="bg-peach-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-peach border border-peach/10">Essence</span>
+                    <span className="bg-azure-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-azure border border-azure/10">Terminale C</span>
+                    <span className="bg-peach-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-peach border border-peach/10">2h / Semaine</span>
                   </div>
-                  <div className="flex items-center gap-0.5 text-[7px] font-bold text-emerald-dark bg-emerald-tint px-1.5 py-0.5 rounded"><ShieldCheck className="w-2.5 h-2.5" /> VÉRIFIÉ</div>
+                  <div className="flex items-center gap-0.5 text-[7px] font-bold text-emerald-dark bg-emerald-tint px-1.5 py-0.5 rounded"><ShieldCheck className="w-2.5 h-2.5" /> VALIDÉ</div>
                 </div>
               </div>
             </div>
@@ -118,15 +118,15 @@ const PhoneMockup = ({ screenType = "home", className = "" }) => (
         <div className="h-full flex flex-col bg-white">
           <div className="h-[42%] relative overflow-hidden bg-pearl"><img src={IMG_INTERIOR} className="w-full h-full object-cover" alt="" /><div className="absolute top-4 left-4 w-8 h-8 bg-white/80 backdrop-blur-lg rounded-full flex items-center justify-center"><ChevronRight className="w-3.5 h-3.5 text-charcoal rotate-180" /></div></div>
           <div className="flex-1 bg-white -mt-5 rounded-t-[1.75rem] relative z-10 p-4 flex flex-col shadow-md">
-            <p className="text-[8px] font-semibold text-text-muted uppercase tracking-[0.18em] mb-0.5">Mercedes-Benz</p>
-            <h3 className="text-lg font-bold text-text-primary leading-tight mb-2" style={{ fontFamily: 'var(--font-heading)' }}>Classe S 500 <br />4MATIC</h3>
+            <p className="text-[8px] font-semibold text-text-muted uppercase tracking-[0.18em] mb-0.5">Bulletin de Notes</p>
+            <h3 className="text-lg font-bold text-text-primary leading-tight mb-2" style={{ fontFamily: 'var(--font-heading)' }}>Performance <br />Trimestrielle</h3>
             <p className="text-xl font-bold text-gold mb-4"></p>
             <div className="grid grid-cols-3 gap-2 mb-4">
-              {[{ icon: Gauge, label: 'Km', value: '15,000', bg: 'bg-azure-tint' }, { icon: Zap, label: 'Puissance', value: '435 ch', bg: 'bg-peach-tint' }, { icon: Car, label: 'Année', value: '2023', bg: 'bg-emerald-tint' }].map(({ icon: Icon, label, value, bg }, i) => (
+              {[{ icon: Users, label: 'Classe', value: '45 Élèves', bg: 'bg-azure-tint' }, { icon: Zap, label: 'Moyenne', value: '16.5 / 20', bg: 'bg-peach-tint' }, { icon: Star, label: 'Rang', value: '2ème', bg: 'bg-emerald-tint' }].map(({ icon: Icon, label, value, bg }, i) => (
                 <div key={i} className={`${bg} rounded-xl p-2 text-center`}><Icon className="w-3.5 h-3.5 mx-auto text-text-muted mb-1" /><div className="text-[7px] font-semibold text-text-muted uppercase tracking-wider">{label}</div><div className="text-[10px] font-bold text-text-primary mt-0.5">{value}</div></div>
               ))}
             </div>
-            <button className="mt-auto w-full bg-onyx text-white font-semibold py-3 rounded-xl flex justify-center items-center gap-2 text-xs hover:bg-graphite transition-colors">Contacter le Pro <ArrowRight className="w-3.5 h-3.5" /></button>
+            <button className="mt-auto w-full bg-onyx text-white font-semibold py-3 rounded-xl flex justify-center items-center gap-2 text-xs hover:bg-graphite transition-colors">Détails Complet <ArrowRight className="w-3.5 h-3.5" /></button>
           </div>
         </div>
       )}
@@ -202,7 +202,7 @@ const DownloadPopup = ({ isOpen, onClose }) => {
             </h3>
 
             <p className="text-text-secondary text-[12px] font-light leading-snug mb-4 max-w-[260px]">
-              Nous peaufinons chaque détail pour que votre expérience SAAH soit à la hauteur de vos exigences les plus élevées.
+              Nous peaufinons chaque détail pour que votre expérience E-SCHOOL soit à la hauteur de vos exigences les plus élevées.
             </p>
 
             <div className="w-full bg-pearl/50 rounded-2xl p-4 border border-border-light mt-0 mb-4">
@@ -235,8 +235,8 @@ const Navbar = ({ onDownload }) => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-white/80 backdrop-blur-2xl border-b border-border-light py-3 shadow-xs' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 flex justify-between items-center">
         <a href="#" className="flex items-center gap-3 group">
-          <img src={LION_LOGO} alt="SAAH" className="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-500" />
-          <span className="font-bold text-xl tracking-[0.02em] text-onyx" style={{ fontFamily: 'var(--font-heading)' }}>SAAH</span>
+          <img src={LION_LOGO} alt="E-School" className="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-500" />
+          <span className="font-bold text-xl tracking-[0.02em] text-onyx" style={{ fontFamily: 'var(--font-heading)' }}>E-SCHOOL</span>
         </a>
         <div className="flex items-center gap-5">
           <button onClick={onDownload} className="btn-primary text-[11px]">Télécharger</button>
@@ -257,14 +257,14 @@ const Hero = ({ onDownload }) => (
     <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10 w-full">
       <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
         <div className="flex-1 flex flex-col items-center text-center lg:items-start lg:text-left max-w-2xl">
-          <Reveal delay={100}><Badge color="gold" className="mb-8"><Diamond className="w-3 h-3" /> L'Excellence Automobile</Badge></Reveal>
+          <Reveal delay={100}><Badge color="gold" className="mb-8"><Award className="w-3 h-3" /> L'Éducation réinventée</Badge></Reveal>
           <Reveal delay={200}>
             <h1 className="font-bold text-[3rem] sm:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.5rem] text-onyx tracking-[-0.03em] leading-[0.95] mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
               L'excellence,{' '}<br className="hidden lg:block" />
-              <span className="italic text-gold">au bout des<br className="hidden sm:block" /> doigts.</span>
+              <span className="italic text-gold">au cœur de<br className="hidden sm:block" /> l'école.</span>
             </h1>
           </Reveal>
-          <Reveal delay={350}><p className="text-base lg:text-lg text-text-secondary leading-[1.8] mb-10 max-w-lg font-light">Un accès privilégié à des véhicules premium et certifiés. La première plateforme de confiance en Afrique Centrale.</p></Reveal>
+          <Reveal delay={350}><p className="text-base lg:text-lg text-text-secondary leading-[1.8] mb-10 max-w-lg font-light">Gérez votre établissement avec une fluidité inégalée. La plateforme de gestion scolaire de référence en Afrique Centrale.</p></Reveal>
           <Reveal delay={450}>
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <button onClick={onDownload} className="btn-dark w-full sm:w-auto"><Apple className="w-5 h-5" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Télécharger sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight normal-case">App Store</div></div></button>
@@ -275,12 +275,12 @@ const Hero = ({ onDownload }) => (
             <div className="mt-12 flex items-center gap-8">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-emerald-tint rounded-xl flex items-center justify-center border border-emerald/20"><ShieldCheck className="w-5 h-5 text-emerald-dark" /></div>
-                <div><div className="text-xs font-semibold text-text-primary">100% Vérifié</div><div className="text-[10px] text-text-muted">Certifié SAAH</div></div>
+                <div><div className="text-xs font-semibold text-text-primary">Securisé</div><div className="text-[10px] text-text-muted">Certifié E-School</div></div>
               </div>
               <div className="w-px h-8 bg-border" />
               <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">{[1,2,3,4].map(i => <img key={i} src={`https://i.pravatar.cc/36?u=saah-user-${i}`} alt="" className="w-7 h-7 rounded-full border-2 border-white object-cover" />)}</div>
-                <div><div className="text-xs font-semibold text-text-primary">10K+</div><div className="text-[10px] text-text-muted">Utilisateurs</div></div>
+                <div className="flex -space-x-2">{[1,2,3,4].map(i => <img key={i} src={`https://i.pravatar.cc/36?u=eschool-user-${i}`} alt="" className="w-7 h-7 rounded-full border-2 border-white object-cover" />)}</div>
+                <div><div className="text-xs font-semibold text-text-primary">500+</div><div className="text-[10px] text-text-muted">Établissements</div></div>
               </div>
             </div>
           </Reveal>
@@ -316,10 +316,10 @@ const AnimatedNumber = ({ target, suffix = "" }) => {
 
 const StatsSection = () => {
   const stats = [
-    { value: "2500", suffix: "+", label: "Véhicules", icon: Car, color: "text-gold-glow", border: "border-gold/20" },
-    { value: "150", suffix: "+", label: "Concessionnaires", icon: Award, color: "text-coral-light", border: "border-coral/20" },
-    { value: "10000", suffix: "+", label: "Acheteurs", icon: Users, color: "text-azure-light", border: "border-azure/20" },
-    { value: "12", suffix: "", label: "Villes", icon: MapPin, color: "text-emerald-light", border: "border-emerald/20" },
+    { value: "50000", suffix: "+", label: "Élèves", icon: Users, color: "text-gold-glow", border: "border-gold/20" },
+    { value: "500", suffix: "+", label: "Établissements", icon: Award, color: "text-coral-light", border: "border-coral/20" },
+    { value: "2500", suffix: "+", label: "Enseignants", icon: ShieldCheck, color: "text-azure-light", border: "border-azure/20" },
+    { value: "10", suffix: "", label: "Régions", icon: MapPin, color: "text-emerald-light", border: "border-emerald/20" },
   ];
   return (
     <section className="relative py-20 overflow-hidden bg-onyx">
@@ -346,7 +346,7 @@ const StatsSection = () => {
 
 // ── Marquee ──
 const InfiniteMarquee = () => {
-  const brands = ['MERCEDES-BENZ', 'PORSCHE', 'AUDI', 'BMW', 'LAMBORGHINI', 'LAND ROVER', 'BENTLEY', 'MASERATI', 'FERRARI', 'ROLLS-ROYCE'];
+  const brands = ['MATERNELLE', 'PRIMAIRE', 'COLLÈGE', 'LYCÉE', 'UNIVERSITÉ', 'FORMATION PRO', 'INSTITUT', 'ACADÉMIE'];
   return (
     <div className="w-full py-6 overflow-hidden border-y border-border-light bg-pearl">
       <div className="flex whitespace-nowrap animate-marquee items-center gap-14">
@@ -364,9 +364,9 @@ const InfiniteMarquee = () => {
 // ── Value Props ──
 const ValueProps = () => {
   const features = [
-    { icon: Search, title: "Recherche Intelligente", desc: "Filtres avancés et recommandations IA pour identifier instantanément le véhicule parfait.", accent: "text-azure", iconBg: "bg-azure-tint", borderC: "border-azure/15" },
-    { icon: Eye, title: "Transparence Totale", desc: "Historique complet, photos certifiées et rapport d'inspection pour chaque annonce.", accent: "text-violet", iconBg: "bg-violet-tint", borderC: "border-violet/15" },
-    { icon: Zap, title: "Transaction Simplifiée", desc: "Mise en relation directe avec les concessionnaires les plus réputés.", accent: "text-emerald-dark", iconBg: "bg-emerald-tint", borderC: "border-emerald/15" },
+    { icon: Users, title: "Gestion des Élèves", desc: "Suivi complet du cursus, de l'assiduité et du comportement en temps réel.", accent: "text-azure", iconBg: "bg-azure-tint", borderC: "border-azure/15" },
+    { icon: Award, title: "Suivi Académique", desc: "Saisie des notes simplifiée, calcul automatique des moyennes et génération des bulletins.", accent: "text-violet", iconBg: "bg-violet-tint", borderC: "border-violet/15" },
+    { icon: Zap, title: "Communication Directe", desc: "Lien instantané entre l'administration, les enseignants et les parents d'élèves.", accent: "text-emerald-dark", iconBg: "bg-emerald-tint", borderC: "border-emerald/15" },
   ];
   return (
     <section className="section-padding bg-white relative overflow-hidden" id="plateforme">
@@ -391,10 +391,10 @@ const ValueProps = () => {
             <Reveal delay={100}><SectionLabel>Notre Approche</SectionLabel></Reveal>
             <Reveal delay={200}>
               <h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-[1.12] mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
-                Achetez et vendez avec une <span className="italic text-coral">sérénité absolue</span>.
+                Pilotez votre établissement avec une <span className="italic text-coral">maîtrise totale</span>.
               </h2>
             </Reveal>
-            <Reveal delay={250}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Nous avons repensé chaque étape du parcours d'achat automobile pour une expérience fluide, transparente et sécurisée.</p></Reveal>
+            <Reveal delay={250}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Nous avons digitalisé chaque processus administratif pour vous permettre de vous concentrer sur l'essentiel : la réussite de vos élèves.</p></Reveal>
             <div className="space-y-5">
               {features.map((f, i) => (
                 <Reveal key={i} delay={300 + i * 120}>
@@ -417,9 +417,9 @@ const ValueProps = () => {
 // ── How It Works ──
 const HowItWorks = () => {
   const steps = [
-    { num: "01", title: "Explorez", desc: "Parcourez notre catalogue de véhicules premium vérifiés.", icon: Search, color: "text-azure", bg: "bg-azure-tint", borderC: "border-azure/15", hoverBg: "group-hover:bg-azure", hoverText: "group-hover:text-white" },
-    { num: "02", title: "Vérifiez", desc: "Consultez l'historique, les photos certifiées et le rapport SAAH.", icon: ShieldCheck, color: "text-emerald-dark", bg: "bg-emerald-tint", borderC: "border-emerald/15", hoverBg: "group-hover:bg-emerald", hoverText: "group-hover:text-white" },
-    { num: "03", title: "Contactez", desc: "Entrez en relation directe avec le concessionnaire vérifié.", icon: Phone, color: "text-coral", bg: "bg-coral-tint", borderC: "border-coral/15", hoverBg: "group-hover:bg-coral", hoverText: "group-hover:text-white" },
+    { num: "01", title: "Configuration", desc: "Importez vos données élèves et configurez vos classes en quelques clics.", icon: Zap, color: "text-azure", bg: "bg-azure-tint", borderC: "border-azure/15", hoverBg: "group-hover:bg-azure", hoverText: "group-hover:text-white" },
+    { num: "02", title: "Déploiement", desc: "Distribuez les accès aux enseignants et ouvrez le portail parent.", icon: Users, color: "text-emerald-dark", bg: "bg-emerald-tint", borderC: "border-emerald/15", hoverBg: "group-hover:bg-emerald", hoverText: "group-hover:text-white" },
+    { num: "03", title: "Gestion", desc: "Suivez les performances et simplifiez votre administration au quotidien.", icon: TrendingUp, color: "text-coral", bg: "bg-coral-tint", borderC: "border-coral/15", hoverBg: "group-hover:bg-coral", hoverText: "group-hover:text-white" },
   ];
   return (
     <section className="section-padding relative overflow-hidden">
@@ -432,7 +432,7 @@ const HowItWorks = () => {
           <Reveal><SectionLabel>Comment ça marche</SectionLabel></Reveal>
           <Reveal delay={100}>
             <h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-tight max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-heading)' }}>
-              Trois étapes vers votre <span className="italic text-violet">véhicule idéal</span>
+              Trois étapes vers votre <span className="italic text-violet">école digitale</span>
             </h2>
           </Reveal>
         </div>
@@ -459,9 +459,9 @@ const HowItWorks = () => {
 // ── Testimonials ──
 const TestimonialSection = () => {
   const testimonials = [
-    { text: "SAAH a complètement transformé notre façon d'acheter des véhicules. La transparence est incomparable.", name: "Jean-Marc Essono", role: "Entrepreneur · Douala", avatar: "https://i.pravatar.cc/80?u=saah-client-1", topColor: "bg-gold" },
-    { text: "En tant que concessionnaire, SAAH m'a permis de toucher des clients qualifiés que je n'aurais jamais atteints.", name: "Marie-Claire Ndam", role: "Concessionnaire · Yaoundé", avatar: "https://i.pravatar.cc/80?u=saah-client-2", topColor: "bg-coral" },
-    { text: "L'inspection certifiée SAAH nous a donné une confiance totale. Un achat sans appréhension.", name: "Patrick Mbida", role: "Directeur Général · Douala", avatar: "https://i.pravatar.cc/80?u=saah-client-3", topColor: "bg-azure" },
+    { text: "E-SCHOOL a radicalement changé notre gestion des bulletins. Un gain de temps incroyable pour nos équipes.", name: "Jean-Marc Essono", role: "Directeur d'École · Douala", avatar: "https://i.pravatar.cc/80?u=eschool-client-1", topColor: "bg-gold" },
+    { text: "En tant que parent, je peux enfin suivre les notes et les absences de mes enfants en temps réel depuis mon téléphone.", name: "Marie-Claire Ndam", role: "Parent d'Élève · Yaoundé", avatar: "https://i.pravatar.cc/80?u=eschool-client-2", topColor: "bg-coral" },
+    { text: "La plateforme est intuitive et les rapports statistiques nous aident à prendre les meilleures décisions pédagogiques.", name: "Patrick Mbida", role: "Préfet des Études · Douala", avatar: "https://i.pravatar.cc/80?u=eschool-client-3", topColor: "bg-azure" },
   ];
   return (
     <section className="section-padding bg-white relative overflow-hidden" id="securite">
@@ -495,9 +495,9 @@ const TestimonialSection = () => {
 // ── Pro Section ──
 const ProSection = ({ onDownload }) => {
   const cards = [
-    { icon: TrendingUp, title: "Visibilité Maximale", text: "Touchez un réseau d'acheteurs qualifiés.", stat: "5x", statLabel: "plus de visibilité", color: "text-coral", bg: "bg-coral-tint", hoverBg: "group-hover:bg-coral", borderC: "border-coral/15" },
-    { icon: Users, title: "Leads Qualifiés", text: "Des acheteurs vérifiés et motivés.", stat: "92%", statLabel: "satisfaction", color: "text-azure", bg: "bg-azure-tint", hoverBg: "group-hover:bg-azure", borderC: "border-azure/15" },
-    { icon: Shield, title: "Label Pro SAAH", text: "Faites valoir votre professionnalisme.", stat: "100%", statLabel: "certifiés", color: "text-emerald-dark", bg: "bg-emerald-tint", hoverBg: "group-hover:bg-emerald", borderC: "border-emerald/15" },
+    { icon: TrendingUp, title: "Analyse de Données", text: "Suivez les performances globales de votre établissement.", stat: "100%", statLabel: "digitalisé", color: "text-coral", bg: "bg-coral-tint", hoverBg: "group-hover:bg-coral", borderC: "border-coral/15" },
+    { icon: Users, title: "Gestion RH", text: "Suivez les carrières et les charges des enseignants.", stat: "95%", statLabel: "gain de temps", color: "text-azure", bg: "bg-azure-tint", hoverBg: "group-hover:bg-azure", borderC: "border-azure/15" },
+    { icon: Shield, title: "Sécurité de Données", text: "Vos données sont cryptées et sauvegardées quotidiennement.", stat: "100%", statLabel: "sécurisé", color: "text-emerald-dark", bg: "bg-emerald-tint", hoverBg: "group-hover:bg-emerald", borderC: "border-emerald/15" },
   ];
   return (
     <section className="section-padding relative overflow-hidden" id="pro">
@@ -508,10 +508,10 @@ const ProSection = ({ onDownload }) => {
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-center">
           <div className="flex-1">
-            <Reveal><SectionLabel>Pour les Professionnels</SectionLabel></Reveal>
-            <Reveal delay={100}><h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-[1.12] mb-5" style={{ fontFamily: 'var(--font-heading)' }}>Le showroom digital de <span className="italic text-azure">votre concession.</span></h2></Reveal>
-            <Reveal delay={200}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Un tableau de bord intuitif pour publier vos véhicules, gérer vos leads et suivre vos performances.</p></Reveal>
-            <Reveal delay={300}><button onClick={onDownload} className="btn-primary">Rejoindre SAAH Business <ArrowRight className="w-4 h-4" /></button></Reveal>
+            <Reveal><SectionLabel>Pour les Établissements</SectionLabel></Reveal>
+            <Reveal delay={100}><h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-[1.12] mb-5" style={{ fontFamily: 'var(--font-heading)' }}>Le futur de l'école est <span className="italic text-azure">numérique.</span></h2></Reveal>
+            <Reveal delay={200}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Un tableau de bord complet pour les fondateurs et administrateurs afin de piloter la croissance de l'établissement.</p></Reveal>
+            <Reveal delay={300}><button onClick={onDownload} className="btn-primary">Démo Institutionnelle <ArrowRight className="w-4 h-4" /></button></Reveal>
           </div>
           <div className="flex-1 space-y-5 w-full">
             {cards.map((item, i) => (
@@ -549,8 +549,8 @@ const CTASection = ({ onDownload }) => (
     <div className="noise-overlay" style={{ opacity: 0.04 }} />
     <div className="max-w-4xl mx-auto px-6 md:px-10 lg:px-16 relative z-10 text-center">
       <Reveal><div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[11px] font-semibold uppercase tracking-[0.15em] bg-white/[0.06] text-gold-glow border border-white/[0.08] mb-8"><Sparkles className="w-3 h-3" /> Commencez maintenant</div></Reveal>
-      <Reveal delay={100}><h2 className="font-bold text-3xl md:text-4xl lg:text-5xl text-white tracking-[-0.02em] leading-tight mb-5" style={{ fontFamily: 'var(--font-heading)' }}>Prêt à prendre <span className="italic text-gold">le volant ?</span></h2></Reveal>
-      <Reveal delay={200}><p className="text-text-light/60 text-base md:text-lg font-light mb-10 max-w-2xl mx-auto leading-relaxed">L'application SAAH est gratuite. Téléchargez-la et découvrez la nouvelle référence automobile en Afrique Centrale.</p></Reveal>
+      <Reveal delay={100}><h2 className="font-bold text-3xl md:text-4xl lg:text-5xl text-white tracking-[-0.02em] leading-tight mb-5" style={{ fontFamily: 'var(--font-heading)' }}>Prêt à numériser <span className="italic text-gold">votre école ?</span></h2></Reveal>
+      <Reveal delay={200}><p className="text-text-light/60 text-base md:text-lg font-light mb-10 max-w-2xl mx-auto leading-relaxed">L'application E-SCHOOL est gratuite pour les élèves et parents. Rejoignez la révolution éducative en Afrique Centrale.</p></Reveal>
       <Reveal delay={300}>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button onClick={onDownload} className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full font-semibold text-sm text-white bg-gold hover:bg-gold-dark hover:-translate-y-1 transition-all duration-400 shadow-gold-lg">
@@ -572,8 +572,8 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
       <div className="flex flex-col lg:flex-row justify-between gap-14 mb-16">
         <div className="max-w-sm">
-          <div className="flex items-center gap-3 mb-5"><img src={LION_LOGO} alt="SAAH" className="w-8 h-8 object-contain" /><span className="font-bold text-xl text-white tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>SAAH</span></div>
-          <p className="text-text-light/40 text-sm font-light leading-[1.8] mb-6">L'innovation technologique au service de l'excellence automobile en Afrique Centrale.</p>
+          <div className="flex items-center gap-3 mb-5"><img src={LION_LOGO} alt="E-School" className="w-8 h-8 object-contain" /><span className="font-bold text-xl text-white tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>E-SCHOOL</span></div>
+          <p className="text-text-light/40 text-sm font-light leading-[1.8] mb-6">L'excellence technologique au service de l'éducation en Afrique Centrale.</p>
           <div className="flex gap-3">
             {[{ l: 'Li', c: 'hover:text-azure' }, { l: 'Ig', c: 'hover:text-coral' }, { l: 'Fb', c: 'hover:text-azure' }].map(s => (
               <a key={s.l} href="#" className="w-9 h-9 rounded-xl bg-white/[0.05] border border-white/[0.08] flex items-center justify-center hover:border-gold/30 transition-all duration-300 group">
@@ -583,14 +583,14 @@ const Footer = () => (
           </div>
         </div>
         <div className="flex gap-12 lg:gap-16 flex-wrap">
-          {[{ title: "Produit", links: ["Pour les acheteurs", "Pour les pros", "Catalogue", "Inspection"] }, { title: "Entreprise", links: ["À propos", "Carrières", "Presse", "Contact"] }, { title: "Légal", links: ["Mentions légales", "Confidentialité", "CGU", "Cookies"] }].map((col, i) => (
+          {[{ title: "Produit", links: ["Pour les élèves", "Pour les écoles", "Portail Parent", "Administration"] }, { title: "Entreprise", links: ["À propos", "Carrières", "Écoles Partenaires", "Contact"] }, { title: "Légal", links: ["Mentions légales", "Confidentialité", "CGU", "Protection des données"] }].map((col, i) => (
             <div key={i}><h4 className="font-semibold text-white/70 mb-5 text-[12px] tracking-[0.12em] uppercase">{col.title}</h4><ul className="space-y-3">{col.links.map((l, j) => <li key={j}><a href="#" className="text-[13px] text-text-light/35 font-light hover:text-gold transition-colors duration-300">{l}</a></li>)}</ul></div>
           ))}
         </div>
       </div>
       <div className="gold-line w-full mb-8" />
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-text-light/25 font-medium">
-        <p>© 2026 SAAH SA. Tous droits réservés.</p>
+        <p>© 2026 E-SCHOOL. Tous droits réservés.</p>
         <p className="flex items-center gap-1.5">Construit avec <span className="text-coral">♥</span> en Afrique Centrale</p>
       </div>
     </div>
