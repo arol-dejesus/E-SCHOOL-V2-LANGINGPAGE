@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   Search, ShieldCheck, Zap, ChevronRight, ChevronDown, Star, ArrowRight, Play, Apple,
   TrendingUp, Users, MapPin, Car, Heart, Sparkles, Gauge, Shield, Menu, X,
-  Award, Eye, Phone, Diamond
+  Award, Eye, Phone, Diamond, Globe
 } from 'lucide-react';
 
 const LION_LOGO = "/eschool_logo.png";
@@ -79,11 +79,11 @@ const PhoneMockup = ({ screenType = "home", className = "" }) => (
             </div>
             <img src={LION_LOGO} alt="E-School" className="w-8 h-8 rounded-full bg-white p-0.5 border border-border shadow-xs" />
           </div>
-          <div className="bg-pearl rounded-xl p-2.5 flex items-center gap-2 border border-border-light"><Search className="w-3.5 h-3.5 text-text-muted" /><span className="text-[10px] font-medium text-text-muted">Rechercher un cours...</span></div>
+          <div className="bg-pearl rounded-xl p-2.5 flex items-center gap-2 border border-border-light"><Search className="w-3.5 h-3.5 text-text-muted" /><span className="text-[10px] font-medium text-text-muted">Quelle langue apprendre ?</span></div>
         </div>
         <div className="flex-1 overflow-y-auto px-4 pt-3 space-y-3 pb-20 no-scrollbar">
           <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
-            {['Tout', 'Design', 'Développement', 'Business'].map((cat, i) => (
+            {['Tout', 'Anglais', 'Français', 'Allemand', 'Turc'].map((cat, i) => (
               <div key={i} className={`px-3 py-1 rounded-full text-[9px] font-semibold whitespace-nowrap ${i === 0 ? 'bg-gold text-white shadow-sm' : 'bg-white text-text-secondary border border-border-light'}`}>{cat}</div>
             ))}
           </div>
@@ -91,16 +91,16 @@ const PhoneMockup = ({ screenType = "home", className = "" }) => (
             <div key={i} className="bg-white rounded-2xl border border-border-light overflow-hidden group shadow-xs">
               <div className="relative h-32 overflow-hidden bg-pearl">
                 <img src={img} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="" />
-                <div className="absolute top-2 left-2 px-2 py-0.5 bg-white/90 backdrop-blur-lg rounded-md text-[7px] font-bold tracking-[0.15em] uppercase">{i === 0 ? 'DEVELOPPEMENT' : 'DESIGN UI/UX'}</div>
+                <div className="absolute top-2 left-2 px-2 py-0.5 bg-white/90 backdrop-blur-lg rounded-md text-[7px] font-bold tracking-[0.15em] uppercase">{i === 0 ? 'ANGLAIS' : 'ALLEMAND'}</div>
                 <div className="absolute top-2 right-2 p-1.5 bg-white/90 backdrop-blur-lg rounded-full"><Sparkles className="w-3 h-3 text-gold animate-pulse" /></div>
               </div>
               <div className="p-3">
-                <h4 className="font-bold text-text-primary text-[11px] mb-0.5">{i === 0 ? 'Master React & Vite' : 'Figma Advanced'}</h4>
+                <h4 className="font-bold text-text-primary text-[11px] mb-0.5">{i === 0 ? 'Business English Mastery' : 'Deutsch A1: Débutant'}</h4>
                 <p className="font-bold text-gold text-sm mb-2">{i === 0 ? '' : ''}</p>
                 <div className="flex items-center justify-between border-t border-border-light pt-2">
                   <div className="flex gap-1">
-                    <span className="bg-azure-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-azure border border-azure/10">Expert</span>
-                    <span className="bg-peach-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-peach border border-peach/10">12h Vidéo</span>
+                    <span className="bg-azure-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-azure border border-azure/10">B1-C2</span>
+                    <span className="bg-peach-tint px-1.5 py-0.5 rounded text-[7px] font-semibold text-peach border border-peach/10">Cours Live</span>
                   </div>
                   <div className="flex items-center gap-0.5 text-[7px] font-bold text-emerald-dark bg-emerald-tint px-1.5 py-0.5 rounded"><Award className="w-2.5 h-2.5" /> CERTIFIÉ</div>
                 </div>
@@ -260,11 +260,11 @@ const Hero = ({ onDownload }) => (
           <Reveal delay={100}><Badge color="gold" className="mb-8"><Zap className="w-3 h-3" /> L'Éducation de Demain</Badge></Reveal>
           <Reveal delay={200}>
             <h1 className="font-bold text-[3rem] sm:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.5rem] text-onyx tracking-[-0.03em] leading-[0.95] mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
-              Apprenez,<br className="hidden lg:block" />
-              <span className="italic text-gold">où que vous soyez.</span>
+              Parlez le monde,<br className="hidden lg:block" />
+              <span className="italic text-gold">à votre rythme.</span>
             </h1>
           </Reveal>
-          <Reveal delay={350}><p className="text-base lg:text-lg text-text-secondary leading-[1.8] mb-10 max-w-lg font-light">Maîtrisez de nouvelles compétences avec les meilleurs experts. La plateforme de cours en ligne leader en Afrique Centrale.</p></Reveal>
+          <Reveal delay={350}><p className="text-base lg:text-lg text-text-secondary leading-[1.8] mb-10 max-w-lg font-light">Maîtrisez l'Anglais, le Français, l'Allemand ou le Turc avec des experts natifs. La plateforme de langues leader en Afrique Centrale.</p></Reveal>
           <Reveal delay={450}>
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <button onClick={onDownload} className="btn-dark w-full sm:w-auto"><Apple className="w-5 h-5" /><div className="text-left"><div className="text-[8px] font-normal tracking-[0.1em] uppercase opacity-70">Télécharger sur</div><div className="text-sm font-semibold -mt-0.5 tracking-tight normal-case">App Store</div></div></button>
@@ -316,10 +316,10 @@ const AnimatedNumber = ({ target, suffix = "" }) => {
 
 const StatsSection = () => {
   const stats = [
-    { value: "1000", suffix: "+", label: "Cours Vidéo", icon: Play, color: "text-gold-glow", border: "border-gold/20" },
-    { value: "250", suffix: "+", label: "Experts Formateurs", icon: Award, color: "text-coral-light", border: "border-coral/20" },
-    { value: "75000", suffix: "+", label: "Apprenants", icon: Users, color: "text-azure-light", border: "border-azure/20" },
-    { value: "15", suffix: "", label: "Partenaires", icon: Star, color: "text-emerald-light", border: "border-emerald/20" },
+    { value: "500", suffix: "+", label: "Classes en Direct", icon: Play, color: "text-gold-glow", border: "border-gold/20" },
+    { value: "50", suffix: "+", label: "Professeurs Natifs", icon: Award, color: "text-coral-light", border: "border-coral/20" },
+    { value: "25000", suffix: "+", label: "Étudiants Actifs", icon: Users, color: "text-azure-light", border: "border-azure/20" },
+    { value: "4", suffix: "", label: "Langues Clés", icon: Globe, color: "text-emerald-light", border: "border-emerald/20" },
   ];
   return (
     <section className="relative py-20 overflow-hidden bg-onyx">
@@ -346,7 +346,7 @@ const StatsSection = () => {
 
 // ── Marquee ──
 const InfiniteMarquee = () => {
-  const brands = ['MATERNELLE', 'PRIMAIRE', 'COLLÈGE', 'LYCÉE', 'UNIVERSITÉ', 'FORMATION PRO', 'INSTITUT', 'ACADÉMIE'];
+  const brands = ['ANGLAIS', 'FRANÇAIS', 'ALLEMAND', 'TURC', 'BUSINESS', 'DÉBUTANT', 'AVANCÉ', 'IELTS/TOEFL'];
   return (
     <div className="w-full py-6 overflow-hidden border-y border-border-light bg-pearl">
       <div className="flex whitespace-nowrap animate-marquee items-center gap-14">
@@ -364,9 +364,9 @@ const InfiniteMarquee = () => {
 // ── Value Props ──
 const ValueProps = () => {
   const features = [
-    { icon: Play, title: "Cours à la Demande", desc: "Accédez à vos leçons 24h/7j depuis n'importe quel appareil, même hors ligne.", accent: "text-azure", iconBg: "bg-azure-tint", borderC: "border-azure/15" },
-    { icon: Award, title: "Certifications Reconnues", desc: "Obtenez des certificats valorisables sur le marché de l'emploi après chaque formation.", accent: "text-violet", iconBg: "bg-violet-tint", borderC: "border-violet/15" },
-    { icon: Users, title: "Communauté de Mentorat", desc: "Échangez directement avec vos formateurs et une communauté d'apprenants passionnés.", accent: "text-emerald-dark", iconBg: "bg-emerald-tint", borderC: "border-emerald/15" },
+    { icon: Play, title: "Immersion Directe", desc: "Suivez des sessions live avec des professeurs natifs pour une progression foudroyante.", accent: "text-azure", iconBg: "bg-azure-tint", borderC: "border-azure/15" },
+    { icon: Award, title: "Certificats CEFR", desc: "Obtenez des certifications alignées sur les standards internationaux (A1 à C2).", accent: "text-violet", iconBg: "bg-violet-tint", borderC: "border-violet/15" },
+    { icon: Users, title: "Cafés Linguistiques", desc: "Pratiquez l'oral au sein de clubs de conversation dynamiques et bienveillants.", accent: "text-emerald-dark", iconBg: "bg-emerald-tint", borderC: "border-emerald/15" },
   ];
   return (
     <section className="section-padding bg-white relative overflow-hidden" id="plateforme">
@@ -391,10 +391,10 @@ const ValueProps = () => {
             <Reveal delay={100}><SectionLabel>Notre Approche</SectionLabel></Reveal>
             <Reveal delay={200}>
               <h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-[1.12] mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
-                Propulsez votre <span className="italic text-coral">carrière professionnelle</span>.
+                Ouvrez-vous de <span className="italic text-coral">nouveaux horizons</span>.
               </h2>
             </Reveal>
-            <Reveal delay={250}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Nous avons sélectionné pour vous les meilleures formations pratiques pour vous accompagner dans votre réussite.</p></Reveal>
+            <Reveal delay={250}><p className="text-text-secondary text-[15px] font-light leading-[1.8] mb-10 max-w-lg">Que ce soit pour le travail, les études ou le voyage, nous vous donnons les clés de la communication internationale.</p></Reveal>
             <div className="space-y-5">
               {features.map((f, i) => (
                 <Reveal key={i} delay={300 + i * 120}>
@@ -432,7 +432,7 @@ const HowItWorks = () => {
           <Reveal><SectionLabel>Comment ça marche</SectionLabel></Reveal>
           <Reveal delay={100}>
             <h2 className="font-bold text-3xl md:text-4xl lg:text-[2.8rem] text-onyx tracking-[-0.02em] leading-tight max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-heading)' }}>
-              Votre parcours vers le <span className="italic text-violet">succès</span>
+              Maîtrisez une langue en <span className="italic text-violet">quelques mois</span>
             </h2>
           </Reveal>
         </div>
@@ -459,9 +459,9 @@ const HowItWorks = () => {
 // ── Testimonials ──
 const TestimonialSection = () => {
   const testimonials = [
-    { text: "E-SCHOOL est la meilleure plateforme que j'ai utilisée. Les cours en ligne sont clairs, structurés et très pros.", name: "Jean-Marc Essono", role: "Étudiant en Tech · Douala", avatar: "https://i.pravatar.cc/80?u=eschool-client-1", topColor: "bg-gold" },
-    { text: "J'ai pu me former à mon rythme tout en travaillant. Les certificats m'ont vraiment aidé pour mon CV.", name: "Marie-Claire Ndam", role: "Développeuse Junior · Yaoundé", avatar: "https://i.pravatar.cc/80?u=eschool-client-2", topColor: "bg-coral" },
-    { text: "La qualité des vidéos et des supports de cours est exceptionnelle. Une vraie révolution pour nous au Cameroun.", name: "Patrick Mbida", role: "Entrepreneur · Douala", avatar: "https://i.pravatar.cc/80?u=eschool-client-3", topColor: "bg-azure" },
+    { text: "Grâce à l'allemand appris sur E-SCHOOL, j'ai pu obtenir ma bourse pour Berlin en seulement 6 mois. Incroyable !", name: "Jean-Marc Essono", role: "Boursier DAAD · Douala", avatar: "https://i.pravatar.cc/80?u=eschool-client-1", topColor: "bg-gold" },
+    { text: "Le turc paraissait impossible, mais la méthode live est fantastique. Je gère maintenant mes imports à Istanbul seul.", name: "Marie-Claire Ndam", role: "Commerce International · Yaoundé", avatar: "https://i.pravatar.cc/80?u=eschool-client-2", topColor: "bg-gold" },
+    { text: "Le business English m'a permis de négocier mon premier contrat aux USA. Les profs sont vraiment compétents.", name: "Patrick Mbida", role: "Manager Export · Douala", avatar: "https://i.pravatar.cc/80?u=eschool-client-3", topColor: "bg-gold" },
   ];
   return (
     <section className="section-padding bg-white relative overflow-hidden" id="securite">
@@ -573,7 +573,7 @@ const Footer = () => (
       <div className="flex flex-col lg:flex-row justify-between gap-14 mb-16">
         <div className="max-w-sm">
           <div className="flex items-center gap-3 mb-5"><img src={LION_LOGO} alt="E-School" className="w-10 h-10 object-contain" /><span className="font-bold text-xl text-white tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>E-SCHOOL</span></div>
-          <p className="text-text-light/40 text-sm font-light leading-[1.8] mb-6">L'excellence de la formation en ligne pour l'Afrique de demain.</p>
+          <p className="text-text-light/40 text-sm font-light leading-[1.8] mb-6">La référence du e-learning linguistique en Afrique Centrale.</p>
           <div className="flex gap-3">
             {[{ l: 'Li', c: 'hover:text-azure' }, { l: 'Ig', c: 'hover:text-coral' }, { l: 'Fb', c: 'hover:text-azure' }].map(s => (
               <a key={s.l} href="#" className="w-9 h-9 rounded-xl bg-white/[0.05] border border-white/[0.08] flex items-center justify-center hover:border-gold/30 transition-all duration-300 group">
